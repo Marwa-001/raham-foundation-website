@@ -1,4 +1,4 @@
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import './globals.css';
@@ -10,13 +10,13 @@ const inter = Inter({
   display: 'swap',
 });
 
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  display: 'swap',
-});
+// const playfair = Playfair_Display({
+//   subsets: ['latin'],
+//   variable: '--font-playfair',
+//   weight: ['400', '500', '600', '700'],
+//   style: ['normal', 'italic'],
+//   display: 'swap',
+// });
 
 export const metadata = {
   title: {
@@ -41,7 +41,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={inter.variable}>
       <body className="fade-in">
         <Navbar />
         <main style={{ flex: 1 }}>

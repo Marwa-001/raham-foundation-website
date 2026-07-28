@@ -1,10 +1,10 @@
 /* ---------- Design Tokens / Variables ---------- */
 :root {
-  --green-950: #0c3a2c;
-  --green-900: #0f4536;
-  --green-800: #155a46;
-  --gold: #dba556;
-  --gold-dark: #c48f43;
+  --green-950: #1c555f;
+  --green-900: #22646f;
+  --green-800: #2a7683;
+  --gold: #c89a46;
+  --gold-dark: #b3873a;
   --cream: #faf7f0;
   --beige: #f2ead9;
   --ink: #16281f;
@@ -51,7 +51,7 @@ a {
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-playfair), serif;
+  font-family: "Times New Roman", Times, serif;
   margin: 0;
   font-weight: 500;
   line-height: 1.15;
@@ -157,19 +157,23 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 16px 0;
-  gap: 24px;
-  flex-wrap: wrap;
+  gap: 12px;
+  flex-wrap: nowrap;
 }
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-playfair), serif;
+  gap: 8px;
+  font-family: "Times New Roman", Times, serif;
   font-size: 20px;
   font-weight: 600;
   color: var(--ink);
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
+
 .brand-mark {
   width: 34px;
   height: 34px;
@@ -211,6 +215,110 @@ button {
 .nav-links .btn {
   padding: 10px 22px;
   font-size: 14px;
+}
+
+/* Mobile controls (hidden on desktop) */
+.nav-mobile-controls {
+  display: none;
+  align-items: center;
+  gap: 14px;
+  height: 50px;
+  flex-shrink: 0;
+}
+.btn-sm {
+  padding: 9px 18px;
+  font-size: 13.5px;
+}
+
+/* Hamburger button */
+.hamburger {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.hamburger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile slide-down menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(320px, 82vw);
+  height: 100vh;
+  background: var(--cream);
+  z-index: 60;
+  box-shadow: -8px 0 30px rgba(12, 58, 44, 0.15);
+  transform: translateX(100%);
+  transition: transform .3s ease;
+  padding: 90px 32px 40px;
+  overflow-y: auto;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--ink);
+  background: var(--beige);
+  transition: background .18s ease, transform .18s ease;
+}
+.mobile-menu-close:hover {
+  background: var(--line);
+  transform: rotate(90deg);
+}
+.mobile-menu.is-open {
+  transform: translateX(0);
+}
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mobile-menu-links a {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--ink);
+  padding: 14px 4px;
+  border-bottom: 1px solid var(--line);
+}
+.mobile-menu-links a.active {
+  color: var(--green-950);
+  font-weight: 600;
+}
+
+.mobile-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 58, 44, 0.35);
+  z-index: 55;
 }
 
 /* ---------- Hero ---------- */
@@ -291,7 +399,7 @@ button {
   padding: 20px 24px;
 }
 .hero-stat-card .big {
-  font-family: var(--font-playfair), serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 28px;
   font-weight: 600;
   color: var(--ink);
@@ -316,7 +424,7 @@ button {
   padding: 36px 0;
 }
 .stat {
-  text-align: left;
+  text-align: center;
   padding: 0 24px;
   border-left: 1px solid var(--line);
 }
@@ -325,7 +433,7 @@ button {
   padding-left: 0;
 }
 .stat .num {
-  font-family: var(--font-playfair), serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 38px;
   color: var(--green-950);
 }
@@ -338,73 +446,101 @@ button {
   color: var(--gray);
 }
 
-/* ---------- About ---------- */
-.about {
-  background: var(--cream);
-  padding: 100px 0 110px;
-}
-.about-top {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 64px;
-}
-.about-top h2 {
+/* ---------- About (new layout) ---------- */
+.about-heading {
   font-size: 36px;
   color: var(--ink);
   margin-top: 14px;
-  max-width: 420px;
+  /* max-width: 640px; */
 }
-.about-copy p {
+.about-intro {
+  margin-top: 20px;
   font-size: 15.5px;
   line-height: 1.8;
   color: var(--gray);
-}
-.about-copy p + p {
-  margin-top: 18px;
+  /* max-width: 620px; */
 }
 
-.about-block {
+.vision-panel {
+  position: relative;
+  background: var(--green-950);
+  border-radius: var(--radius-lg);
+  padding: 60px 56px 140px;
   margin-top: 56px;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 64px;
-  align-items: start;
+  /* no overflow:hidden here anymore — so the cards below aren't clipped */
 }
-.about-block h3 {
-  font-size: 24px;
-  color: var(--ink);
+.vision-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
-.about-block .block-copy p {
-  font-size: 15.5px;
-  line-height: 1.8;
-  color: var(--gray);
+.vision-glow {
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(219,165,86,0.35) 0%, rgba(219,165,86,0) 70%);
+}
+.vision-content {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+}
+.eyebrow-light {
+  color: var(--gold);
+}
+.vision-content h3 {
+  font-size: 28px;
+  color: #fff;
+  margin-top: 14px;
+}
+.vision-content p {
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #cfe0d6;
 }
 
-.values-grid {
+.values-float {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: -84px;
+  z-index: 2;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 .value-card {
   background: var(--white);
-  border: 1px solid var(--line);
+  border: 1.5px solid var(--green-950);
   border-radius: var(--radius-md);
-  padding: 26px 26px 28px;
+  box-shadow: var(--shadow-card);
+  padding: 24px 22px 26px;
   transition: transform .2s ease, box-shadow .2s ease;
 }
 .value-card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-card);
 }
 .value-card h4 {
-  font-size: 18px;
+  font-size: 17px;
   color: var(--ink);
   margin-bottom: 8px;
 }
 .value-card p {
-  font-size: 14.5px;
+  font-size: 13.5px;
   line-height: 1.6;
   color: var(--gray);
+}
+
+.about {
+  padding-bottom: 200px;
+  padding-top: 80px;
 }
 
 /* ---------- Focus areas ---------- */
@@ -540,7 +676,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-playfair), serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 19px;
   font-weight: 600;
   color: #fff;
@@ -693,7 +829,7 @@ footer {
   gap: 44px;
 }
 .project-stats .stat-num {
-  font-family: var(--font-playfair), serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 24px;
   color: var(--green-950);
 }
@@ -1052,12 +1188,17 @@ footer {
   .hero h1 {
     font-size: 42px;
   }
-  .about-top {
-    grid-template-columns: 1fr;
-  }
-  .about-block {
-    grid-template-columns: 1fr;
-  }
+  .values-float {
+  position: static;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 40px;
+}
+.vision-panel {
+  padding: 44px 28px;
+}
+.about {
+  padding-bottom: 100px;
+}
   .values-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1080,7 +1221,10 @@ footer {
     padding: 44px 28px;
   }
   .nav-links {
-    gap: 18px;
+    display: none;
+  }
+  .nav-mobile-controls {
+    display: flex;
   }
   .page-hero h1 {
     font-size: 34px;
@@ -1118,6 +1262,33 @@ footer {
   }
   .cta h2 {
     font-size: 26px;
+  }
+
+  .brand {
+    font-size: 16px;
+    gap: 6px;
+  }
+  .brand-mark {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+  .brand-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .btn-sm {
+    padding: 8px 14px;
+    font-size: 12.5px;
+  }
+  .hamburger {
+    width: 30px;
+    height: 30px;
+  }
+  .wrap {
+    padding: 0 16px;
   }
   .nav-inner {
     gap: 14px;

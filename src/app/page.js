@@ -61,36 +61,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- ABOUT SECTION ---------- */}
+     {/* ---------- ABOUT SECTION ---------- */}
       <section className="about" id="about">
         <div className="wrap">
-          <div className="about-top">
-            <div>
-              <span className="eyebrow">About us</span>
-              <h2>Mercy is the beginning of every meaningful change.</h2>
-            </div>
-            <div className="about-copy">
-              <p>
-                Raham — meaning mercy — is at the heart of every project we deploy. We work alongside families and community leaders to solve problems from within, not from above. Every program is designed with the people it serves, measured by outcomes, and sustained by trust.
-              </p>
-              <p>
-                From a single classroom in 2014, we now run schools, health camps, relief missions and livelihood centers across four states.
-              </p>
-            </div>
-          </div>
+          <span className="eyebrow">About us</span>
+          <h2 className="about-heading">Mercy is the beginning of every meaningful change.</h2>
+          <p className="about-intro">
+            Raham — meaning mercy — is at the heart of every project we deploy. We work alongside families and community leaders to solve problems from within, not from above.
+          </p>
 
-          <div className="about-block">
-            <h3>Our vision</h3>
-            <div className="block-copy">
+          <div className="vision-panel">
+            <div className="vision-bg">
+              <div className="vision-glow"></div>
+            </div>
+            <div className="vision-content">
+              <span className="eyebrow eyebrow-light">Our vision</span>
+              <h3>A world where no one is denied education, health or hope.</h3>
               <p>
-                A world where no one is denied education, health or hope because of where they were born. We imagine communities that lead their own transformation — with tools, trust and time to grow.
+                We imagine communities that lead their own transformation — with tools, trust and time to grow. From a single classroom in 2014, we now run schools, health camps, relief missions and livelihood centers across four states.
               </p>
             </div>
-          </div>
 
-          <div className="about-block">
-            <h3>Our values</h3>
-            <div className="values-grid">
+            <div className="values-float">
               <div className="value-card">
                 <h4>Mercy</h4>
                 <p>Every program begins with listening, not prescribing.</p>
