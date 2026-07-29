@@ -54,24 +54,32 @@ export default function ContactClient() {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!validate()) return;
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (!validate()) return;
 
-    setSubmitting(true);
-    // Simulate API request
-    setTimeout(() => {
-      setSubmitting(false);
-      setSuccess(true);
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        reason: 'General inquiry',
-        message: '',
-      });
-    }, 1500);
-  };
+  setSubmitting(true);
+  try {
+    const res = await fetch('https://raham-form-worker.rahamfoundation.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ formType: 'contact', ...formData }),
+    });
+    if (!res.ok) throw new Error('Failed to send');
+    setSuccess(true);
+    setFormData({
+      fullName: '',
+      email: '',
+      phone: '',
+      reason: 'General inquiry',
+      message: '',
+    });
+  } catch (err) {
+    setErrors((prev) => ({ ...prev, submit: 'Something went wrong. Please try again or email us directly.' }));
+  } finally {
+    setSubmitting(false);
+  }
+};
 
   return (
     <>
