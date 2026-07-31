@@ -32,6 +32,7 @@ html {
 body {
   margin: 0;
   font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
   color: var(--ink);
   background: var(--cream);
   -webkit-font-smoothing: antialiased;
@@ -50,11 +51,18 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4 {
-  font-family: "Times New Roman", Times, serif;
+h1, h2 {
+  font-family: var(--font-playfair), serif;
   margin: 0;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.15;
+}
+
+h3, h4 {
+  font-family: var(--font-poppins), sans-serif;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.25;
 }
 
 p {
@@ -164,9 +172,9 @@ button {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--font-playfair), serif;
+  font-weight: 700;
   font-size: 20px;
-  font-weight: 600;
   color: var(--ink);
   flex-shrink: 1;
   min-width: 0;
@@ -399,7 +407,9 @@ button {
   padding: 20px 24px;
 }
 .hero-stat-card .big {
-  font-family: "Times New Roman", Times, serif;
+  
+  font-family: var(--font-playfair), serif;
+  font-weight: 700;
   font-size: 28px;
   font-weight: 600;
   color: var(--ink);
@@ -433,7 +443,8 @@ button {
   padding-left: 0;
 }
 .stat .num {
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--font-playfair), serif;
+  font-weight: 700;
   font-size: 38px;
   color: var(--green-950);
 }
@@ -448,6 +459,8 @@ button {
 
 /* ---------- About (new layout) ---------- */
 .about-heading {
+  font-family: var(--font-playfair), serif;
+  font-weight: 700;
   font-size: 36px;
   color: var(--ink);
   margin-top: 14px;
@@ -487,6 +500,8 @@ button {
   background: radial-gradient(circle, rgba(219,165,86,0.35) 0%, rgba(219,165,86,0) 70%);
 }
 .vision-content {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
   position: relative;
   z-index: 1;
   max-width: 620px;
@@ -676,9 +691,9 @@ footer {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--font-playfair), serif;
+  font-weight: 700;
   font-size: 19px;
-  font-weight: 600;
   color: #fff;
   text-decoration: none;
 }
@@ -809,6 +824,8 @@ footer {
   margin-bottom: 14px;
 }
 .project-content h3 {
+  font-family: var(--font-playfair), serif;
+  font-weight: 700;
   font-size: 30px;
   color: var(--green-950);
   margin-bottom: 16px;
@@ -829,7 +846,8 @@ footer {
   gap: 44px;
 }
 .project-stats .stat-num {
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--font-playfair), serif;
+  font-weight: 700;
   font-size: 24px;
   color: var(--green-950);
 }
