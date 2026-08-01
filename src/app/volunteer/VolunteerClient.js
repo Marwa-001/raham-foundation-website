@@ -61,27 +61,35 @@ export default function VolunteerClient() {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!validate()) return;
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (!validate()) return;
 
-    setSubmitting(true);
-    // Simulate API request
-    setTimeout(() => {
-      setSubmitting(false);
-      setSuccess(true);
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        city: '',
-        areaOfInterest: 'Education',
-        availability: '2-4 hours',
-        skills: '',
-        motivation: '',
-      });
-    }, 1500);
-  };
+  setSubmitting(true);
+  try {
+    const res = await fetch('https://raham-form-worker.rahamfoundation.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ formType: 'volunteer', ...formData }),
+    });
+    if (!res.ok) throw new Error('Failed to send');
+    setSuccess(true);
+    setFormData({
+      fullName: '',
+      email: '',
+      phone: '',
+      city: '',
+      areaOfInterest: 'Education',
+      availability: '2-4 hours',
+      skills: '',
+      motivation: '',
+    });
+  } catch (err) {
+    setErrors((prev) => ({ ...prev, submit: 'Something went wrong. Please try again or email us directly.' }));
+  } finally {
+    setSubmitting(false);
+  }
+};
 
   return (
     <>
@@ -266,6 +274,12 @@ export default function VolunteerClient() {
                   'Apply to Volunteer'
                 )}
               </button>
+
+              {errors.submit && (
+  <span style={{ color: '#c94a4a', fontSize: '13px', marginTop: '10px', display: 'block' }}>
+    {errors.submit}
+  </span>
+)}
             </form>
           )}
 

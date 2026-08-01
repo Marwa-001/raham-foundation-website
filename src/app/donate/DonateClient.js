@@ -82,25 +82,34 @@ export default function DonateClient() {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!validate()) return;
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (!validate()) return;
 
-    setSubmitting(true);
-    setLastPledgedAmount(formData.amount);
-    
-    setTimeout(() => {
-      setSubmitting(false);
-      setSuccess(true);
-      setFormData({
-        amount: '1500',
-        fullName: '',
-        email: '',
-        phone: '',
-        message: '',
-      });
-    }, 1500);
-  };
+  setSubmitting(true);
+  setLastPledgedAmount(formData.amount);
+
+  try {
+    const res = await fetch('https://raham-form-worker.rahamfoundation.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ formType: 'donate', ...formData }),
+    });
+    if (!res.ok) throw new Error('Failed to send');
+    setSuccess(true);
+    setFormData({
+      amount: '1500',
+      fullName: '',
+      email: '',
+      phone: '',
+      message: '',
+    });
+  } catch (err) {
+    setErrors((prev) => ({ ...prev, submit: 'Something went wrong. Please try again or email us directly.' }));
+  } finally {
+    setSubmitting(false);
+  }
+};
 
   const isPresetSelected = (preset) => {
     return formData.amount === preset;
@@ -240,6 +249,8 @@ export default function DonateClient() {
                 onChange={handleChange}
               ></textarea>
 
+
+
               <button type="submit" className="btn btn-gold btn-block" disabled={submitting}>
                 {submitting ? (
                   <>
@@ -249,6 +260,12 @@ export default function DonateClient() {
                   'Pledge donation'
                 )}
               </button>
+
+              {errors.submit && (
+  <span style={{ color: '#c94a4a', fontSize: '13px', marginTop: '10px', display: 'block' }}>
+    {errors.submit}
+  </span>
+)}
             </form>
           )}
 
