@@ -700,8 +700,13 @@ button {
 
 /* ---------- CTA ---------- */
 .cta-wrap {
-  background: var(--cream);
+  background: var(--beige);
   padding: 90px 0 30px;
+}
+
+.kindness-cta{
+  
+  padding: 90px 0px;
 }
 
 .cta {

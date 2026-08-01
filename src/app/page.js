@@ -115,7 +115,7 @@ export default function Home() {
       </section>
 
       {/* ---------- FOCUS AREAS SECTION ---------- */}
-      <section className="focus" id="projects">
+      {/* <section className="focus" id="projects">
         <div className="wrap">
           <div className="focus-head">
             <div>
@@ -162,10 +162,10 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ---------- CTA SECTION ---------- */}
-      <section className="cta-wrap" id="donate">
+      <section className="cta-wrap kindness-cta" id="donate">
         <div className="wrap">
           <div className="cta">
             <div className="cta-glow"></div>

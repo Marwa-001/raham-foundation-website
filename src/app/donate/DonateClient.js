@@ -21,7 +21,7 @@ export default function DonateClient() {
   const validate = () => {
     const tempErrors = {};
     const amtNum = parseFloat(formData.amount);
-    
+
     if (isNaN(amtNum) || amtNum <= 0) {
       tempErrors.amount = 'Please enter a valid donation amount';
     }
@@ -83,33 +83,33 @@ export default function DonateClient() {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (!validate()) return;
+    e.preventDefault();
+    if (!validate()) return;
 
-  setSubmitting(true);
-  setLastPledgedAmount(formData.amount);
+    setSubmitting(true);
+    setLastPledgedAmount(formData.amount);
 
-  try {
-    const res = await fetch('https://raham-form-worker.rahamfoundation.workers.dev', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ formType: 'donate', ...formData }),
-    });
-    if (!res.ok) throw new Error('Failed to send');
-    setSuccess(true);
-    setFormData({
-      amount: '1500',
-      fullName: '',
-      email: '',
-      phone: '',
-      message: '',
-    });
-  } catch (err) {
-    setErrors((prev) => ({ ...prev, submit: 'Something went wrong. Please try again or email us directly.' }));
-  } finally {
-    setSubmitting(false);
-  }
-};
+    try {
+      const res = await fetch('https://raham-form-worker.rahamfoundation.workers.dev', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formType: 'donate', ...formData }),
+      });
+      if (!res.ok) throw new Error('Failed to send');
+      setSuccess(true);
+      setFormData({
+        amount: '1500',
+        fullName: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
+    } catch (err) {
+      setErrors((prev) => ({ ...prev, submit: 'Something went wrong. Please try again or email us directly.' }));
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   const isPresetSelected = (preset) => {
     return formData.amount === preset;
@@ -262,10 +262,10 @@ export default function DonateClient() {
               </button>
 
               {errors.submit && (
-  <span style={{ color: '#c94a4a', fontSize: '13px', marginTop: '10px', display: 'block' }}>
-    {errors.submit}
-  </span>
-)}
+                <span style={{ color: '#c94a4a', fontSize: '13px', marginTop: '10px', display: 'block' }}>
+                  {errors.submit}
+                </span>
+              )}
             </form>
           )}
 
@@ -291,18 +291,22 @@ export default function DonateClient() {
               </div>
             </div>
 
+            {/*
             <div className="side-card light">
               <h3>UPI</h3>
               <p className="upi-text">Scan any UPI app and pay to:</p>
               <span className="upi-id">rahamfoundation@hdfc</span>
             </div>
+            */}
 
+            {/*
             <div className="side-card light">
               <h3>Tax exemption</h3>
               <p className="tax-text">
-                Raham Foundation is registered under sections 12A and 80G of the Income Tax Act. Receipts are issued within 7 days of contribution.
+                Raham Foundation is under sections 12A and 80G of the Income Tax Act. Receipts are issued within 7 days of contribution.
               </p>
             </div>
+            */}
           </div>
         </div>
       </section>

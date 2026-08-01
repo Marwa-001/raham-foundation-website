@@ -40,18 +40,20 @@ export default function Footer() {
               <li>
                 <a href="mailto:hello@rahamfoundation.org">hello@rahamfoundation.org</a>
               </li>
+              {/*
               <li>
                 <a href="tel:+919876543210">+91 98765 43210</a>
-              </li>
+              </li>*/
               <li>
-                <Link href="/">New Delhi, India</Link>
+                <Link href="/">Pakistan</Link>
               </li>
+              }
             </ul>
           </div>
         </div>
         <div className="wrap footer-bottom" style={{ paddingLeft: 0, paddingRight: 0 }}>
           <span>© 2026 Raham Foundation. All rights reserved.</span>
-          <span>Registered under the Societies Act. 80G & 12A certified.</span>
+          <span>Raham Foundation: Building dignity through opportunity, not pity.</span>
         </div>
       </div>
     </footer>

@@ -250,7 +250,7 @@ export default function ContactClient() {
                 <div className="reach-icon">⚲</div>
                 <div>
                   <div className="lbl">Address</div>
-                  <span className="val">New Delhi, India</span>
+                  <span className="val">Pakistan</span>
                 </div>
               </div>
             </div>
