@@ -167,7 +167,7 @@ export default function ContactClient() {
                     type="tel"
                     className="field-input"
                     id="phone"
-                    placeholder="+91 00000 00000"
+                    placeholder="+92 300 1234567"
                     value={formData.phone}
                     onChange={handleChange}
                   />
@@ -236,15 +236,17 @@ export default function ContactClient() {
                     hello@rahamfoundation.org
                   </a>
                 </div>
-              </div>
+           {/*   </div>
               <div className="reach-row">
-                <div className="reach-icon">☎</div>
+                <div className="reach-icon">☎</div>*/}
+                {/*
                 <div>
                   <div className="lbl">Phone</div>
                   <a className="val" href="tel:+919876543210">
                     +91 98765 43210
                   </a>
                 </div>
+*/}
               </div>
               <div className="reach-row">
                 <div className="reach-icon">⚲</div>
@@ -254,7 +256,7 @@ export default function ContactClient() {
                 </div>
               </div>
             </div>
-
+{/*
             <div className="side-card light">
               <h3>Office hours</h3>
               <div className="hours-row">
@@ -269,8 +271,7 @@ export default function ContactClient() {
                 <span>Sunday</span>
                 <span>Closed</span>
               </div>
-            </div>
-
+            </div>*/}
             <div className="side-card light">
               <h3>Prefer to volunteer?</h3>
               <p className="hours-text">

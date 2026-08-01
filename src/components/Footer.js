@@ -11,7 +11,7 @@ export default function Footer() {
               Raham Foundation
             </Link>
             <p className="footer-desc">
-              A registered non-profit working with communities to build dignity through education, healthcare, relief and skill development.
+              A non-profit working with communities to build dignity through education, healthcare, relief and skill development.
             </p>
           </div>
           <div className="footer-col">
@@ -53,7 +53,7 @@ export default function Footer() {
         </div>
         <div className="wrap footer-bottom" style={{ paddingLeft: 0, paddingRight: 0 }}>
           <span>© 2026 Raham Foundation. All rights reserved.</span>
-          <span>Raham Foundation: Building dignity through opportunity, not pity.</span>
+          <span>At Raham Foundation, building dignity through opportunity, not pity.</span>
         </div>
       </div>
     </footer>

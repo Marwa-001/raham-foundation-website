@@ -177,7 +177,7 @@ export default function VolunteerClient() {
                     type="tel"
                     className="field-input"
                     id="phone"
-                    placeholder="+91 00000 00000"
+                    placeholder="+92 300 1234567"
                     value={formData.phone}
                     onChange={handleChange}
                   />
@@ -195,7 +195,7 @@ export default function VolunteerClient() {
                     type="text"
                     className="field-input"
                     id="city"
-                    placeholder="e.g. New Delhi, Patna"
+                    placeholder="e.g. Islamabad, Karachi, Lahore"
                     value={formData.city}
                     onChange={handleChange}
                   />
@@ -315,7 +315,7 @@ export default function VolunteerClient() {
                 </div>
               </div>
             </div>
-
+          {/*
             <div className="side-card light">
               <h3>Active regions</h3>
               <div className="hours-row">
@@ -335,7 +335,7 @@ export default function VolunteerClient() {
                 <span>On-Call</span>
               </div>
             </div>
-
+            */}
             <div className="side-card light">
               <h3>Frequently Asked Questions</h3>
               <p className="hours-text" style={{ fontSize: '13px', lineHeight: '1.6' }}>

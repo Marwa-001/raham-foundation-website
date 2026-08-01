@@ -32,8 +32,8 @@ export default function Home() {
               loading="eager"
             />
             <div className="hero-stat-card">
-              <div className="big">12,400+</div>
-              <div className="label">Lives touched in 2025</div>
+              <div className="big">Spreading</div>
+              <div className="label">Hope and Growth</div>
             </div>
           </div>
         </div>
@@ -44,14 +44,14 @@ export default function Home() {
         <div className="wrap stats-inner">
           <div className="stat">
             <div className="num">47</div>
-            <div className="lbl">Villages served</div>
+            <div className="lbl">Lives changed</div>
           </div>
           <div className="stat">
-            <div className="num">9</div>
+            <div className="num">1</div>
             <div className="lbl">Active programs</div>
           </div>
           <div className="stat">
-            <div className="num">320</div>
+            <div className="num">18</div>
             <div className="lbl">Volunteers</div>
           </div>
         </div>

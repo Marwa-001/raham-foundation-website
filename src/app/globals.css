@@ -766,7 +766,7 @@ footer {
   background: var(--green-950);
   color: #dfe9e3;
   padding: 70px 0 0;
-  margin-top: 70px;
+  margin-top: 0;
 }
 
 .footer-grid {

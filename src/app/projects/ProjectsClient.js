@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import silaiImage from '../../assets/silai.jpg';
+import bykea3Image from '../../assets/bykea3.jpg';
 
 const activeProjects = [
   {
@@ -12,7 +14,7 @@ const activeProjects = [
       ['Skills', 'Provided'],
       ['Families', 'Supported'],
     ],
-    img: 'https://picsum.photos/seed/silai-se-kamai/1000/800',
+    img: silaiImage.src,
   },
 ];
 
@@ -26,7 +28,7 @@ const completedProjects = [
       ['1', 'Bike repaired'],
       ['Halal', 'Livelihood restored'],
     ],
-    img: 'https://picsum.photos/seed/bykearider/1000/800',
+    img: bykea3Image.src,
   },
 ];
 

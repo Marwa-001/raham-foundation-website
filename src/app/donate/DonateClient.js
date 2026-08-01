@@ -228,7 +228,7 @@ export default function DonateClient() {
                 type="tel"
                 className="field-input"
                 id="phone"
-                placeholder="+91 00000 00000"
+                placeholder="+92 300 1234567"
                 value={formData.phone}
                 onChange={handleChange}
               />
