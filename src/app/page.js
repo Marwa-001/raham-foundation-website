@@ -8,7 +8,7 @@ export default function Home() {
         <div className="wrap hero-inner">
           <div className="hero-copy">
             <span className="hero-badge">
-              <span className="dot"></span> EST. 2014
+              <span className="dot"></span> EST. 2026
             </span>
             <h1>
               Small acts.<em>Lasting change.</em>
@@ -54,20 +54,27 @@ export default function Home() {
             <div className="num">320</div>
             <div className="lbl">Volunteers</div>
           </div>
-          <div className="stat">
-            <div className="num">11 yrs</div>
-            <div className="lbl">Of service</div>
-          </div>
         </div>
       </section>
 
-     {/* ---------- ABOUT SECTION ---------- */}
+      {/* ---------- ABOUT SECTION ---------- */}
       <section className="about" id="about">
         <div className="wrap">
           <span className="eyebrow">About us</span>
-          <h2 className="about-heading">Mercy is the beginning of every meaningful change.</h2>
+          <h2 className="about-heading">Sympathy doesn't feed families. So we're stopping the pity and taking action.
+
+          </h2>
           <p className="about-intro">
-            Raham — meaning mercy — is at the heart of every project we deploy. We work alongside families and community leaders to solve problems from within, not from above.
+            Raham Foundation is a non-profit initiative built on one belief: people don’t need pity; they need the opportunity to earn with dignity. Our mission is to uplift vulnerable individuals and families. Born from a discussion among university students, we are now dedicated to building sustainable earning opportunities for underserved communities.
+
+            Distributing water and food may offer temporary relief, but it cannot end the cycle of poverty. According to Pakistan’s Labor Force Survey (2024-25), 5.9 million people are without work, and unemployment has climbed to 7.1%. The World Bank reports the national poverty rate has risen to 25.3%. Behind these numbers are real families struggling to survive.
+
+            Every family we help stands as proof that change is built through action, not sympathy. This is only the beginning of what we hope to build.
+
+          </p>
+
+          <p className="about-quote">
+            “The best of people are those who are most beneficial to others.” — Prophet Muhammad ﷺ
           </p>
 
           <div className="vision-panel">
@@ -76,28 +83,31 @@ export default function Home() {
             </div>
             <div className="vision-content">
               <span className="eyebrow eyebrow-light">Our vision</span>
-              <h3>A world where no one is denied education, health or hope.</h3>
+              <h3>A world where no one is denied education, health or&nbsp;hope.</h3>
               <p>
-                We imagine communities that lead their own transformation — with tools, trust and time to grow. From a single classroom in 2014, we now run schools, health camps, relief missions and livelihood centers across four states.
+                We envision a society where poverty is met with opportunity instead of pity-opportunities that create livelihoods and restore the dignity of individuals.
+                Empowering one person means empowering one family. When a family thrives, the entire community flourishes. Raham Foundation aspires to become the voice and the helping hand for those who are often overlooked.
               </p>
             </div>
+          </div>
 
-            <div className="values-float">
+          <div className="values-section">
+            <span className="eyebrow">Our values</span>
+            <div className="values-grid">
               <div className="value-card">
-                <h4>Mercy</h4>
-                <p>Every program begins with listening, not prescribing.</p>
+                <h4>Compassion</h4>
+                <p>“The merciful are shown mercy by the Most Merciful. Show mercy to those on the earth, and the One above the heavens will show mercy to you.”</p>
+                <p className="value-cite">- Prophet Muhammad ﷺ (Jami’ at-Tirmidhi, Hadith 1924)</p>
               </div>
               <div className="value-card">
-                <h4>Transparency</h4>
-                <p>Public audits, open books, honest reporting.</p>
+                <h4>Empowerment</h4>
+                <p>The Messenger of Allah ﷺ said, “Whoever relieves a believer’s hardship in this world, Allah will relieve his hardship on the Day of Resurrection. Whoever helps ease one in difficulty, Allah will make it easy for him in this world and the Hereafter.”</p>
+                <p className="value-cite">- Sahih Muslim 2699</p>
               </div>
               <div className="value-card">
-                <h4>Dignity</h4>
-                <p>We serve people, never label them beneficiaries.</p>
-              </div>
-              <div className="value-card">
-                <h4>Endurance</h4>
-                <p>We stay in places long after the news cameras leave.</p>
+                <h4>Sustainability</h4>
+                <p>“Whatever good you send forth for yourselves, you will (certainly) find (its reward) with Allah. Surely Allah is All-Seeing of what you do.”</p>
+                <p className="value-cite">- Surah Al Baqarah, Ayah 110</p>
               </div>
             </div>
           </div>

@@ -28,7 +28,7 @@ export default function Navbar() {
           <span className="brand-mark">
             <img src="/logo.png" alt="logo" />
           </span>
-          Raham <span className="accent">Foundation</span>
+          Raham<span className="accent">Foundation</span>
         </Link>
 
         {/* Desktop links */}

@@ -1,71 +1,44 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const activeProjects = [
   {
-    tag: 'Uttar Pradesh & Bihar',
-    title: 'Roshan Schools',
-    desc: 'A network of free primary schools for first-generation learners, running seven days a week with hot meals and learning kits.',
+    tag: 'Women Empowerment',
+    title: 'Silai Se Kamai',
+    desc: 'Many women want to support their families but lack the necessary resources. Silai Se Kamai is Raham Foundation’s initiative to bridge this gap and empower deserving women. We provide women with sewing machines, materials, and training so they can earn a sustainable, honest livelihood with dignity. What begins with a simple sewing machine turns into financial independence because empowering one woman means empowering an entire family. Together, we\'re breaking the cycle of poverty, one step at a time.',
     stats: [
-      ['6', 'Schools'],
-      ['1,240', 'Students'],
-      ['38', 'Teachers'],
+      ['1', 'Initiative'],
+      ['Skills', 'Provided'],
+      ['Families', 'Supported'],
     ],
-    img: 'https://picsum.photos/seed/roshanschools/1000/800',
-  },
-  {
-    tag: 'Rajasthan & MP',
-    title: 'Sehat Mobile Clinics',
-    desc: 'Mobile health units reaching villages with no permanent clinic, offering check-ups, maternal care and free medicines.',
-    stats: [
-      ['14', 'Villages/month'],
-      ['3,900', 'Patients seen'],
-      ['5', 'Mobile units'],
-    ],
-    img: 'https://picsum.photos/seed/sehatclinics/1000/800',
-  },
-  {
-    tag: 'Jharkhand',
-    title: 'Umeed Livelihood Centers',
-    desc: 'Skill-training centers helping women and young adults learn tailoring, computer basics and small-business bookkeeping.',
-    stats: [
-      ['4', 'Centers'],
-      ['560', 'Enrolled'],
-      ['71%', 'Now earning'],
-    ],
-    img: 'https://picsum.photos/seed/umeedcenters/1000/800',
+    img: 'https://picsum.photos/seed/silai-se-kamai/1000/800',
   },
 ];
 
 const completedProjects = [
   {
-    tag: 'Assam',
-    title: 'Assam Flood Relief 2024',
-    desc: 'Delivered dry rations, water and medical supplies to 4,200 displaced families over eight weeks.',
+    tag: 'Bykea Rider',
+    title: 'Bykea Rider Support',
+    desc: 'By the grace of Allah, we successfully completed another project. We helped a brother leave a scam call center. The income from that job was not halal, so we decided to help him find an honest way to support his family. Thanks to your donations, we repaired his bike so he could start working as a Bykea rider. A small act of support can completely change a life.',
     stats: [
-      ['4,200', 'Families'],
-      ['6,800', 'Kits'],
-      ['8', 'Weeks'],
+      ['1', 'Person helped'],
+      ['1', 'Bike repaired'],
+      ['Halal', 'Livelihood restored'],
     ],
-    img: 'https://picsum.photos/seed/assamflood/1000/800',
-  },
-  {
-    tag: 'Rajasthan',
-    title: 'Barmer Water Wells',
-    desc: 'Dug and handed over 22 community wells, giving reliable clean-water access to villages that once walked hours for water.',
-    stats: [
-      ['22', 'Wells built'],
-      ['9,000+', 'People served'],
-      ['100%', 'Handed over'],
-    ],
-    img: 'https://picsum.photos/seed/barmerwells/1000/800',
+    img: 'https://picsum.photos/seed/bykearider/1000/800',
   },
 ];
 
 function ProjectCarousel({ projects, prefix }) {
   const [index, setIndex] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
   const currentProject = projects[index];
+  const shouldTruncate = currentProject.desc.length > 220;
+
+  useEffect(() => {
+    setIsExpanded(false);
+  }, [index, prefix]);
 
   const handleNext = () => {
     setIndex((prevIndex) => (prevIndex + 1) % projects.length);
@@ -96,9 +69,20 @@ function ProjectCarousel({ projects, prefix }) {
           Project {index + 1} of {projects.length}
         </span>
         <h3 id={`${prefix}-title`}>{currentProject.title}</h3>
-        <p className="desc" id={`${prefix}-desc`}>
+        <p className={`desc ${shouldTruncate && !isExpanded ? 'is-collapsed' : ''}`} id={`${prefix}-desc`}>
           {currentProject.desc}
         </p>
+        {shouldTruncate && (
+          <button
+            type="button"
+            className="read-more"
+            onClick={() => setIsExpanded((prev) => !prev)}
+            aria-expanded={isExpanded}
+            aria-controls={`${prefix}-desc`}
+          >
+            {isExpanded ? 'Read less' : 'Read more'}
+          </button>
+        )}
         <div className="project-divider"></div>
         <div className="project-stats" id={`${prefix}-stats`}>
           {currentProject.stats.map(([num, lbl], i) => (
@@ -150,7 +134,7 @@ export default function ProjectsClient() {
       <section className="page-hero">
         <div className="wrap">
           <span className="eyebrow">Our work</span>
-          <h1>Projects, in the places they were built for.</h1>
+          <h1>Projects placed where they belong.</h1>
           <p>
             Every project starts with a conversation and ends with a community that no longer needs us. Here is what is running now, and what we have finished.
           </p>
