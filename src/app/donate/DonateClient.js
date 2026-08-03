@@ -171,7 +171,7 @@ export default function DonateClient() {
                     ₹{Number(preset).toLocaleString('en-IN')}
                   </button>
                 ))}
-                <input
+                {/* <input
                   type="number"
                   className="amount-custom"
                   id="amount-custom"
@@ -179,7 +179,7 @@ export default function DonateClient() {
                   value={getCustomAmountValue()}
                   onChange={handleCustomAmountChange}
                   min="0"
-                />
+                /> */}
               </div>
               {errors.amount && (
                 <span style={{ color: '#c94a4a', fontSize: '12px', marginTop: '8px', display: 'block' }}>

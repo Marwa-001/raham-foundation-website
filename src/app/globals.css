@@ -1406,7 +1406,7 @@ footer {
   }
 
   .hero-media {
-    order: -1;
+    order: 1;
   }
 
   .hero h1 {

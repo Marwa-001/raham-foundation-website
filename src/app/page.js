@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HomeImage from '../assets/home-hero.jpeg';
 
 export default function Home() {
   return (
@@ -27,14 +28,10 @@ export default function Home() {
           </div>
           <div className="hero-media">
             <img
-              src="https://picsum.photos/seed/rahamplanting/900/700"
+              src={HomeImage.src}
               alt="Volunteers planting a sapling together"
               loading="eager"
             />
-            <div className="hero-stat-card">
-              <div className="big">Spreading</div>
-              <div className="label">Hope and Growth</div>
-            </div>
           </div>
         </div>
       </section>
