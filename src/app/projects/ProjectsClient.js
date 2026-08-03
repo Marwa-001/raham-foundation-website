@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import silaiImage from '../../assets/silai.jpg';
-import bykea3Image from '../../assets/bykea3.jpg';
+import bykeaImage from '../../assets/bykea.jpg';
 
 const activeProjects = [
   {
@@ -28,7 +28,7 @@ const completedProjects = [
       ['1', 'Bike repaired'],
       ['Halal', 'Livelihood restored'],
     ],
-    img: bykea3Image.src,
+    img: bykeaImage.src,
   },
 ];
 

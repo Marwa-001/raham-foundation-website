@@ -14,7 +14,7 @@ export default function Home() {
               Small acts.<em>Lasting change.</em>
             </h1>
             <p className="lede">
-              Raham Foundation partners with underserved communities to build futures of dignity — through schools, health camps, relief and livelihood programs.
+              Raham Foundation aims to benefit deserving individuals through financial assistance, skill development, and the provision of resources needed to build futures of dignity.
             </p>
             <div className="hero-ctas">
               <Link href="/donate" className="btn btn-gold">
@@ -38,25 +38,26 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ---------- STATS SECTION ---------- */}
-      <section className="stats">
-        <div className="wrap stats-inner">
-          <div className="stat">
-            <div className="num">47</div>
-            <div className="lbl">Lives changed</div>
-          </div>
-          <div className="stat">
-            <div className="num">1</div>
-            <div className="lbl">Active programs</div>
-          </div>
-          <div className="stat">
-            <div className="num">18</div>
-            <div className="lbl">Volunteers</div>
-          </div>
-        </div>
-      </section>
-
+       
+     {/* ---------- STATS SECTION ----------
+<section className="stats">
+  <div className="wrap stats-inner">
+    <div className="stat">
+      <div className="num">47</div>
+      <div className="lbl">Lives changed</div>
+    </div>
+    <div className="stat">
+      <div className="num">1</div>
+      <div className="lbl">Active programs</div>
+    </div>
+    <div className="stat">
+      <div className="num">18</div>
+      <div className="lbl">Volunteers</div>
+    </div>
+  </div>
+</section>
+*/}
+          
       {/* ---------- ABOUT SECTION ---------- */}
       <section className="about" id="about">
         <div className="wrap">
@@ -83,7 +84,7 @@ export default function Home() {
             </div>
             <div className="vision-content">
               <span className="eyebrow eyebrow-light">Our vision</span>
-              <h3>A world where no one is denied education, health or&nbsp;hope.</h3>
+              <h3>A world built on empowerment, not charity.</h3>
               <p>
                 We envision a society where poverty is met with opportunity instead of pity-opportunities that create livelihoods and restore the dignity of individuals.
                 Empowering one person means empowering one family. When a family thrives, the entire community flourishes. Raham Foundation aspires to become the voice and the helping hand for those who are often overlooked.
