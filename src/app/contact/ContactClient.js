@@ -18,7 +18,7 @@ export default function ContactClient() {
   const validate = () => {
     const tempErrors = {};
     if (!formData.fullName.trim()) tempErrors.fullName = 'Full name is required';
-    
+
     if (!formData.email.trim()) {
       tempErrors.email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
@@ -54,32 +54,32 @@ export default function ContactClient() {
     }
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (!validate()) return;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
 
-  setSubmitting(true);
-  try {
-    const res = await fetch('https://raham-form-worker.rahamfoundation.workers.dev', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ formType: 'contact', ...formData }),
-    });
-    if (!res.ok) throw new Error('Failed to send');
-    setSuccess(true);
-    setFormData({
-      fullName: '',
-      email: '',
-      phone: '',
-      reason: 'General inquiry',
-      message: '',
-    });
-  } catch (err) {
-    setErrors((prev) => ({ ...prev, submit: 'Something went wrong. Please try again or email us directly.' }));
-  } finally {
-    setSubmitting(false);
-  }
-};
+    setSubmitting(true);
+    try {
+      const res = await fetch('https://raham-form-worker.rahamfoundation.workers.dev', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formType: 'contact', ...formData }),
+      });
+      if (!res.ok) throw new Error('Failed to send');
+      setSuccess(true);
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        reason: 'General inquiry',
+        message: '',
+      });
+    } catch (err) {
+      setErrors((prev) => ({ ...prev, submit: 'Something went wrong. Please try again or email us directly.' }));
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -236,17 +236,6 @@ export default function ContactClient() {
                     hello@rahamfoundation.org
                   </a>
                 </div>
-           {/*   </div>
-              <div className="reach-row">
-                <div className="reach-icon">☎</div>*/}
-                {/*
-                <div>
-                  <div className="lbl">Phone</div>
-                  <a className="val" href="tel:+919876543210">
-                    +91 98765 43210
-                  </a>
-                </div>
-*/}
               </div>
               <div className="reach-row">
                 <div className="reach-icon">⚲</div>
@@ -255,8 +244,36 @@ export default function ContactClient() {
                   <span className="val">Pakistan</span>
                 </div>
               </div>
+              <div className="reach-row">
+                <div className="reach-icon">◎</div>
+                <div>
+                  <div className="lbl">Instagram</div>
+                  <a
+                    className="val"
+                    href="https://www.instagram.com/reel/DbYl96fM11K/?igsh=YXgyeDA0cnczb3ow"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Follow our Instagram
+                  </a>
+                </div>
+              </div>
+              <div className="reach-row">
+                <div className="reach-icon">in</div>
+                <div>
+                  <div className="lbl">LinkedIn</div>
+                  <a
+                    className="val"
+                    href="https://www.linkedin.com/company/rahamfoundation/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visit our LinkedIn
+                  </a>
+                </div>
+              </div>
             </div>
-{/*
+            {/*
             <div className="side-card light">
               <h3>Office hours</h3>
               <div className="hours-row">

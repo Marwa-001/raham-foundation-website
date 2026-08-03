@@ -23,6 +23,7 @@ const completedProjects = [
     tag: 'Bykea Rider',
     title: 'Bykea Rider Support',
     desc: 'By the grace of Allah, we successfully completed another project. We helped a brother leave a scam call center. The income from that job was not halal, so we decided to help him find an honest way to support his family. Thanks to your donations, we repaired his bike so he could start working as a Bykea rider. A small act of support can completely change a life.',
+    reelUrl: 'https://www.instagram.com/reel/DbYl96fM11K/',
     stats: [
       ['1', 'Person helped'],
       ['1', 'Bike repaired'],
@@ -84,6 +85,17 @@ function ProjectCarousel({ projects, prefix }) {
           >
             {isExpanded ? 'Read less' : 'Read more'}
           </button>
+        )}
+        {currentProject.reelUrl && (
+          <a
+            className="read-more"
+            href={currentProject.reelUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Watch ${currentProject.title} reel on Instagram`}
+          >
+            Watch reel
+          </a>
         )}
         <div className="project-divider"></div>
         <div className="project-stats" id={`${prefix}-stats`}>

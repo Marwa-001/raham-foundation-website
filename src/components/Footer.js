@@ -40,14 +40,27 @@ export default function Footer() {
               <li>
                 <a href="mailto:hello@rahamfoundation.org">hello@rahamfoundation.org</a>
               </li>
-              {/*
               <li>
-                <a href="tel:+919876543210">+91 98765 43210</a>
-              </li>*/
+                <a
+                  href="https://www.instagram.com/reel/DbYl96fM11K/?igsh=YXgyeDA0cnczb3ow"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/rahamfoundation/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </li>
               <li>
                 <Link href="/">Pakistan</Link>
               </li>
-              }
             </ul>
           </div>
         </div>
