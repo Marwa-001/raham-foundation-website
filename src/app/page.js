@@ -170,7 +170,7 @@ export default function Home() {
             <div className="cta-content">
               <h2>Your kindness fuels our fieldwork.</h2>
               <p>
-                ₹1,500 sponsors a child's education for a month. ₹5,000 funds a full rural health camp. Every rupee is accounted for.
+                PKR 1,500 sponsors a child's education for a month. PKR 5,000 funds a full rural health camp. Every rupee is accounted for.
               </p>
               <div className="cta-ctas">
                 <Link href="/donate" className="btn btn-gold">

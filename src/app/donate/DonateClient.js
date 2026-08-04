@@ -143,7 +143,7 @@ export default function DonateClient() {
               <div style={{ fontSize: '48px', color: 'var(--gold)', marginBottom: '20px' }}>✓</div>
               <h2>Pledge Received!</h2>
               <p className="sub" style={{ marginTop: '10px' }}>
-                Thank you for your generous pledge of ₹{Number(lastPledgedAmount).toLocaleString('en-IN')}. A member of our team will email you shortly with donation completion and payment details.
+                Thank you for your generous pledge of PKR {Number(lastPledgedAmount).toLocaleString('en-PK')}. A member of our team will email you shortly with donation completion and payment details.
               </p>
               <button
                 type="button"
@@ -159,7 +159,7 @@ export default function DonateClient() {
               <h2>Pledge a donation</h2>
               <p className="sub">Fill this form and our team will reach out with payment options that suit you.</p>
 
-              <span className="field-label">Amount (₹)</span>
+              <span className="field-label">Amount (PKR)</span>
               <div className="amount-row" id="amount-row">
                 {presetAmounts.map((preset) => (
                   <button
@@ -168,7 +168,7 @@ export default function DonateClient() {
                     className={`amount-pill ${isPresetSelected(preset) ? 'is-selected' : ''}`}
                     onClick={() => handlePillClick(preset)}
                   >
-                    ₹{Number(preset).toLocaleString('en-IN')}
+                    PKR {Number(preset).toLocaleString('en-PK')}
                   </button>
                 ))}
                 {/* <input
