@@ -301,7 +301,7 @@ export default function VolunteerClient() {
                 <div>
                   <div className="lbl">Experience</div>
                   <span className="val" style={{ fontWeight: 'normal', fontSize: '13.5px', color: '#cfe0d6' }}>
-                    Gain hands-on experience in community organizing, field audits, and teaching.
+                    Gain hands-on experience in livelihood training, mentorship, and community outreach.
                   </span>
                 </div>
               </div>
