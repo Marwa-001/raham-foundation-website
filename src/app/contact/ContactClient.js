@@ -232,8 +232,8 @@ export default function ContactClient() {
                 <div className="reach-icon">✉</div>
                 <div>
                   <div className="lbl">Email</div>
-                  <a className="val" href="mailto:hello@rahamfoundation.org">
-                    hello@rahamfoundation.org
+                  <a className="val" href="mailto:rahamfoundation.org@gmail.com">
+                    rahamfoundation.org@gmail.com
                   </a>
                 </div>
            {/*   </div>
