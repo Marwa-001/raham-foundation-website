@@ -129,7 +129,7 @@ export default function DonateClient() {
           <span className="eyebrow">Donate</span>
           <h1>Turn intention into impact.</h1>
           <p>
-            Every contribution to Raham Foundation is 80G tax-exempt. Choose how you would like to give — we'll follow up personally with a receipt and updates on the work your gift supports.
+            Choose how you would like to give — we'll follow up personally with a receipt and updates on the work your gift supports.
           </p>
         </div>
       </section>
