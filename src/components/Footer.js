@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div>
             <Link href="/" className="footer-brand">
-              <span className="brand-mark">R</span>
+              <span className="brand-mark"><img src="/logo.png" alt="logo" /></span>
               Raham Foundation
             </Link>
             <p className="footer-desc">
