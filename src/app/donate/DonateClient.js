@@ -275,19 +275,15 @@ export default function DonateClient() {
               <h3>Direct bank transfer</h3>
               <div className="bank-row">
                 <span className="lbl">Account name</span>
-                <span className="val">Raham Foundation</span>
+                <span className="val">Umer Abdullah</span>
               </div>
               <div className="bank-row">
                 <span className="lbl">Account no.</span>
-                <span className="val">5041 2298 7761</span>
-              </div>
-              <div className="bank-row">
-                <span className="lbl">IFSC</span>
-                <span className="val">HDFC0001234</span>
+                <span className="val">14010010137848140020</span>
               </div>
               <div className="bank-row">
                 <span className="lbl">Bank</span>
-                <span className="val">HDFC Bank, New Delhi</span>
+                <span className="val">Allied Bank</span>
               </div>
             </div>
 
