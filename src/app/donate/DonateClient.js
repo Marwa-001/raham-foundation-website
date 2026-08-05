@@ -251,7 +251,7 @@ export default function DonateClient() {
 
 
 
-              <button type="submit" className="btn btn-gold btn-block" disabled={submitting}>
+              <button type="submit" className="btn btn-gold btn-block" style={{ color: '#ffffff' }}  disabled={submitting}>
                 {submitting ? (
                   <>
                     <span className="submitting-loader"></span> Processing...

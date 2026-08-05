@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ChevronDown from '@/components/ChevronDown';
 
 export default function VolunteerClient() {
   const [formData, setFormData] = useState({
@@ -21,7 +22,7 @@ export default function VolunteerClient() {
   const validate = () => {
     const tempErrors = {};
     if (!formData.fullName.trim()) tempErrors.fullName = 'Full name is required';
-    
+
     if (!formData.email.trim()) {
       tempErrors.email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
@@ -43,10 +44,10 @@ export default function VolunteerClient() {
   const handleChange = (e) => {
     const { id, value } = e.target;
     // Map HTML IDs (kebab-case) to camelCase state keys
-    const stateKey = 
-      id === 'full-name' ? 'fullName' : 
-      id === 'area-interest' ? 'areaOfInterest' : 
-      id;
+    const stateKey =
+      id === 'full-name' ? 'fullName' :
+        id === 'area-interest' ? 'areaOfInterest' :
+          id;
 
     setFormData((prev) => ({
       ...prev,
@@ -62,34 +63,34 @@ export default function VolunteerClient() {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (!validate()) return;
+    e.preventDefault();
+    if (!validate()) return;
 
-  setSubmitting(true);
-  try {
-    const res = await fetch('https://raham-form-worker.rahamfoundation.workers.dev', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ formType: 'volunteer', ...formData }),
-    });
-    if (!res.ok) throw new Error('Failed to send');
-    setSuccess(true);
-    setFormData({
-      fullName: '',
-      email: '',
-      phone: '',
-      city: '',
-      areaOfInterest: 'Education',
-      availability: '2-4 hours',
-      skills: '',
-      motivation: '',
-    });
-  } catch (err) {
-    setErrors((prev) => ({ ...prev, submit: 'Something went wrong. Please try again or email us directly.' }));
-  } finally {
-    setSubmitting(false);
-  }
-};
+    setSubmitting(true);
+    try {
+      const res = await fetch('https://raham-form-worker.rahamfoundation.workers.dev', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formType: 'volunteer', ...formData }),
+      });
+      if (!res.ok) throw new Error('Failed to send');
+      setSuccess(true);
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        city: '',
+        areaOfInterest: 'Education',
+        availability: '2-4 hours',
+        skills: '',
+        motivation: '',
+      });
+    } catch (err) {
+      setErrors((prev) => ({ ...prev, submit: 'Something went wrong. Please try again or email us directly.' }));
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -265,7 +266,7 @@ export default function VolunteerClient() {
                 onChange={handleChange}
               ></textarea>
 
-              <button type="submit" className="btn btn-gold btn-block" disabled={submitting}>
+              <button type="submit" className="btn btn-gold btn-block" style={{ color: '#ffffff' }} disabled={submitting}>
                 {submitting ? (
                   <>
                     <span className="submitting-loader"></span> Submitting...
@@ -276,10 +277,10 @@ export default function VolunteerClient() {
               </button>
 
               {errors.submit && (
-  <span style={{ color: '#c94a4a', fontSize: '13px', marginTop: '10px', display: 'block' }}>
-    {errors.submit}
-  </span>
-)}
+                <span style={{ color: '#c94a4a', fontSize: '13px', marginTop: '10px', display: 'block' }}>
+                  {errors.submit}
+                </span>
+              )}
             </form>
           )}
 
@@ -315,7 +316,7 @@ export default function VolunteerClient() {
                 </div>
               </div>
             </div>
-          {/*
+            {/*
             <div className="side-card light">
               <h3>Active regions</h3>
               <div className="hours-row">
@@ -338,10 +339,45 @@ export default function VolunteerClient() {
             */}
             <div className="side-card light">
               <h3>Frequently Asked Questions</h3>
-              <p className="hours-text" style={{ fontSize: '13px', lineHeight: '1.6' }}>
-                <strong>Is there a minimum commitment?</strong><br />
-                We prefer a commitment of at least 3 months, for 2-4 hours per week, to ensure continuity in our student schools and clinics.
-              </p>
+              <details className="faq-item" style={{ marginBottom: '12px' }}>
+                <summary style={{ cursor: 'pointer', fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span>Who is eligible to apply for aid?</span>
+                  <ChevronDown className="faq-chevron" />
+                </summary>
+                <p className="hours-text" style={{ fontSize: '13px', lineHeight: '1.6', marginTop: '8px' }}>
+                  We prefer a commitment of at least 3 months, for 2-4 hours per week, to ensure continuity in our student schools and clinics.
+                </p>
+              </details>
+
+              <details className="faq-item" style={{ marginBottom: '12px' }}>
+                <summary style={{ cursor: 'pointer', fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span>How can I be sure my donation is being used properly?</span>
+                  <ChevronDown className="faq-chevron" />
+                </summary>
+                <p className="hours-text" style={{ fontSize: '13px', lineHeight: '1.6', marginTop: '8px' }}>
+                  We prefer a commitment of at least 3 months, for 2-4 hours per week, to ensure continuity in our student schools and clinics.
+                </p>
+              </details>
+
+              <details className="faq-item" style={{ marginBottom: '12px' }}>
+                <summary style={{ cursor: 'pointer', fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span>Can I sponsor a specific family, student, or project directly?</span>
+                  <ChevronDown className="faq-chevron" />
+                </summary>
+                <p className="hours-text" style={{ fontSize: '13px', lineHeight: '1.6', marginTop: '8px' }}>
+                  We prefer a commitment of at least 3 months, for 2-4 hours per week, to ensure continuity in our student schools and clinics.
+                </p>
+              </details>
+
+              <details className="faq-item" style={{ marginBottom: '12px' }}>
+                <summary style={{ cursor: 'pointer', fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span>How can I volunteer or contribute my skills?</span>
+                  <ChevronDown className="faq-chevron" />
+                </summary>
+                <p className="hours-text" style={{ fontSize: '13px', lineHeight: '1.6', marginTop: '8px' }}>
+                  We prefer a commitment of at least 3 months, for 2-4 hours per week, to ensure continuity in our student schools and clinics.
+                </p>
+              </details>
             </div>
           </div>
         </div>

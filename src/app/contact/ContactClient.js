@@ -212,7 +212,7 @@ export default function ContactClient() {
                 </span>
               )}
 
-              <button type="submit" className="btn btn-gold btn-block" disabled={submitting}>
+              <button type="submit" className="btn btn-gold btn-block" style={{ color: '#ffffff' }}  disabled={submitting}>
                 {submitting ? (
                   <>
                     <span className="submitting-loader"></span> Sending...
@@ -235,13 +235,6 @@ export default function ContactClient() {
                   <a className="val" href="mailto:rahamfoundation.org@gmail.com">
                     rahamfoundation.org@gmail.com
                   </a>
-                </div>
-              </div>
-              <div className="reach-row">
-                <div className="reach-icon">⚲</div>
-                <div>
-                  <div className="lbl">Address</div>
-                  <span className="val">Pakistan</span>
                 </div>
               </div>
               <div className="reach-row">

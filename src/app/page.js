@@ -176,9 +176,9 @@ export default function Home() {
                 <Link href="/donate" className="btn btn-gold">
                   Donate
                 </Link>
-                <Link href="/contact" className="btn btn-outline-dark">
-                  Partner with us
-                </Link>
+               <Link href="/contact" className="btn btn-outline-dark" style={{ fontWeight: 'normal' }}>
+  Partner with us
+</Link>
               </div>
             </div>
           </div>

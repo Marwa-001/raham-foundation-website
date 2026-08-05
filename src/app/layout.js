@@ -2,6 +2,7 @@ import { Inter, Playfair_Display, Poppins } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import './globals.css';
+import FAQBehaviorClient from '@/components/FAQBehaviorClient';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -58,6 +59,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${poppins.variable}`}>
       <body className="fade-in">
         <Navbar />
+        <FAQBehaviorClient />
         <main style={{ flex: 1 }}>
           {children}
         </main>

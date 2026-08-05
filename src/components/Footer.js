@@ -49,7 +49,6 @@ export default function Footer() {
                   Instagram
                 </a>
               </li>
-              <li>
                 <a
                   href="https://www.linkedin.com/company/rahamfoundation/"
                   target="_blank"
@@ -57,10 +56,6 @@ export default function Footer() {
                 >
                   LinkedIn
                 </a>
-              </li>
-              <li>
-                <Link href="/">Pakistan</Link>
-              </li>
             </ul>
           </div>
         </div>
