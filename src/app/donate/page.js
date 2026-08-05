@@ -2,7 +2,7 @@ import DonateClient from './DonateClient';
 
 export const metadata = {
   title: 'Donate',
-  description: 'Support Raham Foundation by making a donation pledge. Contributions are 80G tax-exempt under the Income Tax Act in India.',
+  description: 'Support Raham Foundation by making a donation pledge.',
 };
 
 export default function DonatePage() {

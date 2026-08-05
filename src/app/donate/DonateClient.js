@@ -129,7 +129,7 @@ export default function DonateClient() {
           <span className="eyebrow">Donate</span>
           <h1>Turn intention into impact.</h1>
           <p>
-            Every contribution to Raham Foundation is 80G tax-exempt. Choose how you would like to give — we'll follow up personally with a receipt and updates on the work your gift supports.
+            Choose how you would like to give — we'll follow up personally with a receipt and updates on the work your gift supports.
           </p>
         </div>
       </section>
@@ -143,7 +143,7 @@ export default function DonateClient() {
               <div style={{ fontSize: '48px', color: 'var(--gold)', marginBottom: '20px' }}>✓</div>
               <h2>Pledge Received!</h2>
               <p className="sub" style={{ marginTop: '10px' }}>
-                Thank you for your generous pledge of ₹{Number(lastPledgedAmount).toLocaleString('en-IN')}. A member of our team will email you shortly with donation completion and payment details.
+                Thank you for your generous pledge of PKR {Number(lastPledgedAmount).toLocaleString('en-PK')}. A member of our team will email you shortly with donation completion and payment details.
               </p>
               <button
                 type="button"
@@ -159,7 +159,7 @@ export default function DonateClient() {
               <h2>Pledge a donation</h2>
               <p className="sub">Fill this form and our team will reach out with payment options that suit you.</p>
 
-              <span className="field-label">Amount (₹)</span>
+              <span className="field-label">Amount (PKR)</span>
               <div className="amount-row" id="amount-row">
                 {presetAmounts.map((preset) => (
                   <button
@@ -168,10 +168,10 @@ export default function DonateClient() {
                     className={`amount-pill ${isPresetSelected(preset) ? 'is-selected' : ''}`}
                     onClick={() => handlePillClick(preset)}
                   >
-                    ₹{Number(preset).toLocaleString('en-IN')}
+                    PKR {Number(preset).toLocaleString('en-PK')}
                   </button>
                 ))}
-                <input
+                {/* <input
                   type="number"
                   className="amount-custom"
                   id="amount-custom"
@@ -179,7 +179,7 @@ export default function DonateClient() {
                   value={getCustomAmountValue()}
                   onChange={handleCustomAmountChange}
                   min="0"
-                />
+                /> */}
               </div>
               {errors.amount && (
                 <span style={{ color: '#c94a4a', fontSize: '12px', marginTop: '8px', display: 'block' }}>
@@ -275,19 +275,15 @@ export default function DonateClient() {
               <h3>Direct bank transfer</h3>
               <div className="bank-row">
                 <span className="lbl">Account name</span>
-                <span className="val">Raham Foundation</span>
+                <span className="val">Umer Abdullah</span>
               </div>
               <div className="bank-row">
                 <span className="lbl">Account no.</span>
-                <span className="val">5041 2298 7761</span>
-              </div>
-              <div className="bank-row">
-                <span className="lbl">IFSC</span>
-                <span className="val">HDFC0001234</span>
+                <span className="val">14010010137848140020</span>
               </div>
               <div className="bank-row">
                 <span className="lbl">Bank</span>
-                <span className="val">HDFC Bank, New Delhi</span>
+                <span className="val">Allied Bank</span>
               </div>
             </div>
 

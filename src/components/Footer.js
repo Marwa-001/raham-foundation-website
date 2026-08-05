@@ -38,7 +38,7 @@ export default function Footer() {
             <h5>Reach us</h5>
             <ul>
               <li>
-                <a href="mailto:hello@rahamfoundation.org">hello@rahamfoundation.org</a>
+                <a href="mailto:rahamfoundation.org@gmail.com">rahamfoundation.org@gmail.com</a>
               </li>
               <li>
                 <a

@@ -99,7 +99,7 @@ export default function VolunteerClient() {
           <span className="eyebrow">Join Us</span>
           <h1>Become a Volunteer.</h1>
           <p>
-            Make a real difference in rural communities. We are always looking for passionate volunteers to support our schools, health camps, relief efforts, and skill-training programs.
+            Make a real difference in underprivileged communities. We are always looking for passionate volunteers to support our skill-training programs, livelihood initiatives, and outreach efforts that help people build sustainable independence.
           </p>
         </div>
       </section>
@@ -218,11 +218,11 @@ export default function VolunteerClient() {
                     value={formData.areaOfInterest}
                     onChange={handleChange}
                   >
-                    <option value="Education">Education (Teaching, schools support)</option>
-                    <option value="Healthcare">Healthcare (Medical camps, audits)</option>
-                    <option value="Relief">Relief (Crisis, disaster response)</option>
-                    <option value="Livelihood">Livelihood (Skills training, computers)</option>
-                    <option value="Admin">Administrative (Tech, media, writing)</option>
+                    <option value="Livelihood" title="Mentoring beneficiaries, follow-up, business setup guidance">Livelihood Program Support</option>
+                    <option value="Field Outreach" title="Community mobilization, beneficiary identification, surveys">Field Outreach</option>
+                    <option value="Content & Media" title="Social media, photography, storytelling for campaigns">Content & Media</option>
+                    <option value="Administrative & Operations" title="Tech, data, writing, coordination">Administrative & Operations</option>
+                    <option value="Fundraising & Partnerships" title="Donor outreach, partner coordination">Fundraising & Partnerships</option>
                   </select>
                 </div>
                 <div>
@@ -301,7 +301,7 @@ export default function VolunteerClient() {
                 <div>
                   <div className="lbl">Experience</div>
                   <span className="val" style={{ fontWeight: 'normal', fontSize: '13.5px', color: '#cfe0d6' }}>
-                    Gain hands-on experience in community organizing, field audits, and teaching.
+                    Gain hands-on experience in livelihood training, mentorship, and community outreach.
                   </span>
                 </div>
               </div>
