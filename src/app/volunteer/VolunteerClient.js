@@ -341,21 +341,11 @@ export default function VolunteerClient() {
               <h3>Frequently Asked Questions</h3>
               <details className="faq-item" style={{ marginBottom: '12px' }}>
                 <summary style={{ cursor: 'pointer', fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span>Who is eligible to apply for aid?</span>
-                  <ChevronDown className="faq-chevron" />
-                </summary>
-                <p className="hours-text" style={{ fontSize: '13px', lineHeight: '1.6', marginTop: '8px' }}>
-                  We prefer a commitment of at least 3 months, for 2-4 hours per week, to ensure continuity in our student schools and clinics.
-                </p>
-              </details>
-
-              <details className="faq-item" style={{ marginBottom: '12px' }}>
-                <summary style={{ cursor: 'pointer', fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <span>How can I be sure my donation is being used properly?</span>
                   <ChevronDown className="faq-chevron" />
                 </summary>
                 <p className="hours-text" style={{ fontSize: '13px', lineHeight: '1.6', marginTop: '8px' }}>
-                  We prefer a commitment of at least 3 months, for 2-4 hours per week, to ensure continuity in our student schools and clinics.
+                  Every contribution goes directly into empowerment initiatives such as skills training, resources, and support that help people become self-sufficient. We share regular updates for transparency.
                 </p>
               </details>
 
@@ -365,7 +355,7 @@ export default function VolunteerClient() {
                   <ChevronDown className="faq-chevron" />
                 </summary>
                 <p className="hours-text" style={{ fontSize: '13px', lineHeight: '1.6', marginTop: '8px' }}>
-                  We prefer a commitment of at least 3 months, for 2-4 hours per week, to ensure continuity in our student schools and clinics.
+                  Yes. You can sponsor a specific empowerment project or individual’s journey toward self-sufficiency. Reach out to our team to get matched.
                 </p>
               </details>
 
@@ -375,7 +365,7 @@ export default function VolunteerClient() {
                   <ChevronDown className="faq-chevron" />
                 </summary>
                 <p className="hours-text" style={{ fontSize: '13px', lineHeight: '1.6', marginTop: '8px' }}>
-                  We prefer a commitment of at least 3 months, for 2-4 hours per week, to ensure continuity in our student schools and clinics.
+                  We welcome volunteers who can teach skills or mentor in our empowerment programs. We prefer a commitment of at least 3 months, 2–4 hours per week, to ensure continuity for the people we support.
                 </p>
               </details>
             </div>
